@@ -1,0 +1,9 @@
+Package: myriad
+Title: What the Package Does (one line, title case)
+Version: 0.0.0.9000
+Author: Kieran Healy
+Description: Myriad Pro theme for ggplot.
+Depends: R (>= 3.3.2)
+License: MIT License
+Encoding: UTF-8
+LazyData: true
