@@ -72,7 +72,7 @@ theme_myriad <- function(base_family="Myriad Pro Condensed", base_size = 12,
 
     ret <- ret + theme(panel.grid=element_line(color="gray90", size=0.10))
     ret <- ret + theme(panel.grid.major=element_line(color="gray90", size=0.1))
-    ret <- ret + theme(panel.grid.minor=element_line(color="gray90", size=0.05))
+    ret <- ret + theme(panel.grid.minor=element_line(color="gray90", size=0.1))
 
     if (inherits(grid, "character")) {
       if (regexpr("X", grid)[1] < 0) ret <- ret + theme(panel.grid.major.x=element_blank())
