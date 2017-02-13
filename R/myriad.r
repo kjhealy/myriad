@@ -50,18 +50,19 @@ require(sysfonts)
 
 
 theme_myriad <- function(base_family="Myriad Pro Condensed", base_size = 12,
-                           plot_title_family=base_family, plot_title_size = 18,
-                           plot_title_face="bold", plot_title_margin = 10,
-                           subtitle_family="Myriad Pro Condensed", subtitle_size = 12,
-                           subtitle_face = "plain", subtitle_margin = 15,
-                           strip_text_family = base_family, strip_text_size = 12,
-                           strip_text_face = "plain",
-                           caption_family = "Myriad Pro Condensed", caption_size = 9,
-                           caption_face = "plain", caption_margin = 10,
-                           axis_title_family = base_family, axis_title_size = 9,
-                           axis_title_face = "plain", axis_title_just = "rt",
-                           plot_margin = margin(30, 30, 30, 30),
-                           grid = TRUE, axis = FALSE, ticks = FALSE) {
+                         plot_title_family=base_family, plot_title_size = 18,
+                         plot_title_face="bold", plot_title_margin = 10,
+                         subtitle_family="Myriad Pro Condensed", subtitle_size = 12,
+                         subtitle_face = "plain", subtitle_margin = 15,
+                         strip_text_family = base_family, strip_text_size = 12,
+                         strip_text_face = "plain",
+                         caption_family = "Myriad Pro Condensed", caption_size = 9,
+                         caption_face = "plain", caption_margin = 10,
+                         axis_title_family = base_family, axis_title_size = 9,
+                         axis_title_face = "plain", axis_title_just = "rt",
+                         plot_margin = margin(1, 1, 1, 1),
+                         panel_spacing = unit(0.5, "lines"),
+                         grid = TRUE, axis = FALSE, ticks = FALSE) {
 
   ret <- ggplot2::theme_minimal(base_family=base_family, base_size=base_size)
 
@@ -142,6 +143,8 @@ theme_myriad <- function(base_family="Myriad Pro Condensed", base_size = 12,
                                                margin=margin(t=caption_margin),
                                                family=caption_family, face=caption_face))
   ret <- ret + theme(plot.margin=plot_margin)
+
+  ret <-  ret + theme(panel.spacing=panel_spacing)
 
   ret
 
