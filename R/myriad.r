@@ -3,7 +3,7 @@
 #' You should [import_myriad]() first and also install the fonts on your
 #' system before trying to use this theme.
 #'
-#' @md
+#' @title theme_myriad
 #' @param base_family,base_size base font family and size
 #' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot tilte family, face, size and margi
 #' @param subtitle_family,subtitle_face,subtitle_size plot subtitle family, face and size
@@ -45,10 +45,6 @@
 #'   theme_myriad(grid="Y") +
 #'   theme(axis.text.y=element_blank())
 #' }
-
-require(sysfonts)
-
-
 theme_myriad <- function(base_family="Myriad Pro Condensed", base_size = 12,
                          plot_title_family=base_family, plot_title_size = 18,
                          plot_title_face="bold", plot_title_margin = 10,
@@ -64,6 +60,7 @@ theme_myriad <- function(base_family="Myriad Pro Condensed", base_size = 12,
                          panel_spacing = unit(0.5, "lines"),
                          grid = TRUE, axis = FALSE, ticks = FALSE) {
 
+  require(sysfonts)
   ret <- ggplot2::theme_minimal(base_family=base_family, base_size=base_size)
 
   ret <- ret + theme(legend.background=element_blank())
@@ -173,7 +170,7 @@ import_myriad <- function() {
 }
 
 
-#' @rdname Myriad Condensed
+#' @rdname MyriadCondensed
 #' @md
 #' @title Myriad Pro Condensed font name R variable aliases
 #' @description `font_myriad` == "`Myriad Pro Condensed`"
@@ -181,8 +178,9 @@ import_myriad <- function() {
 #' @export
 font_mc <- "Myriad Pro Condensed"
 
-#' @rdname RobotoCondensed
+#' @rdname MyriadLightCondensed
 #' @md
+#' @title Myriad Pro Light Condensed font name R variable aliases
 #' @description `font_fc_light` == "`Myriad Pro Light Condensed`"
 #' @export
-font_myriad_light <- "Myriad Pro Condensed"
+font_myriad_light <- "Myriad Pro Light Condensed"
