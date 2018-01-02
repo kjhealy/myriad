@@ -159,9 +159,9 @@ import_myriad <- function() {
     myriad_font_dir <- system.file("fonts", "myriad-pro", package="myriad")
     sysfonts::font.add("Myriad Pro Condensed",
                        regular = paste0(myriad_font_dir, "/", "MyriadPro-Cond.otf"),
-                       bold = paste0(myriad_font_dir, "/", "MyriadPro-BoldCond.otf"),
+                       bold = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldCond.otf"),
                        italic = paste0(myriad_font_dir, "/", "MyriadPro-CondIt.otf"),
-                       bolditalic = paste0(myriad_font_dir, "/", "MyriadPro-BoldCondIt.otf")
+                       bolditalic = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldCondIt.otf")
                        )
 
 
