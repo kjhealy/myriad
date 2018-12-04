@@ -3,4 +3,6 @@
 export(font_mc)
 export(font_myriad_light)
 export(import_myriad)
+export(import_myriad_semi)
 export(theme_myriad)
+export(theme_myriad_semi)
