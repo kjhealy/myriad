@@ -2,6 +2,7 @@ Package: myriad
 Title: Myriad Pro themes for ggplot
 Version: 0.0.1.9000
 Author: Kieran Healy
+Maintainer: Kieran Healy <kjhealy@gmail.com>
 Description: Myriad Pro themes for ggplot.
 Depends: R (>= 3.3.2)
 License: MIT License
