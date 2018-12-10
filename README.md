@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kjhealy/socviz.svg?branch=master)](https://travis-ci.org/kjhealy/myriad) 
+
 # myriad
 
 ## @kjhealy
