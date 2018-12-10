@@ -6,8 +6,8 @@ Maintainer: Kieran Healy <kjhealy@gmail.com>
 Description: Myriad Pro themes for ggplot.
 Depends: R (>= 3.3.2)
 Imports:
-    ggplot2,       
     sysfonts
+Suggests: ggplot2    
 License: MIT License
 Encoding: UTF-8
 LazyData: true
