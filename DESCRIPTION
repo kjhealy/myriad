@@ -4,7 +4,10 @@ Version: 0.0.1.9000
 Author: Kieran Healy
 Maintainer: Kieran Healy <kjhealy@gmail.com>
 Description: Myriad Pro themes for ggplot.
-Depends: R (>= 3.3.2), sysfonts
+Depends: R (>= 3.3.2)
+Imports:
+    ggplot2       
+    sysfonts
 License: MIT License
 Encoding: UTF-8
 LazyData: true
