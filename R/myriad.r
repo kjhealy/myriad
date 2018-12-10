@@ -55,7 +55,6 @@ theme_myriad <- function(base_family="Myriad Pro Condensed", base_size = 12,
                          panel_spacing = unit(0.5, "lines"),
                          grid = TRUE, axis = FALSE, ticks = FALSE) {
 
-  require(sysfonts)
   ret <- ggplot2::theme_minimal(base_family=base_family, base_size=base_size)
 
   ret <- ret + theme(legend.background=element_blank())
@@ -200,7 +199,6 @@ theme_myriad_semi <- function (base_family = "Myriad Pro SemiCondensed", base_si
     plot_margin = unit(c(5.5,12,5.5,5.5), "pt"), panel_spacing = unit(0.5,
         "lines"), grid = TRUE, axis = FALSE, ticks = FALSE)
 {
-    require(sysfonts)
     ret <- ggplot2::theme_minimal(base_family = base_family,
         base_size = base_size)
     ret <- ret + theme(legend.background = element_blank())
