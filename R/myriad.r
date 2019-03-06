@@ -1,6 +1,6 @@
 #' @title theme_myriad
 #' @param base_family,base_size base font family and size
-#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot tilte family, face, size and margin
+#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot title family, face, size and margin
 #' @param subtitle_family,subtitle_face,subtitle_size plot subtitle family, face and size
 #' @param subtitle_margin plot subtitle margin bottom (single numeric value)
 #' @param strip_text_family,strip_text_face,strip_text_size facet label font family, face and size
@@ -148,7 +148,7 @@ theme_myriad <- function(base_family="Myriad Pro Condensed", base_size = 12,
 #'
 #' @title theme_myriad_semi
 #' @param base_family,base_size base font family and size
-#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot tilte family, face, size and margi
+#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot title family, face, size and margi
 #' @param subtitle_family,subtitle_face,subtitle_size plot subtitle family, face and size
 #' @param subtitle_margin plot subtitle margin bottom (single numeric value)
 #' @param strip_text_family,strip_text_face,strip_text_size facet label font family, face and size
