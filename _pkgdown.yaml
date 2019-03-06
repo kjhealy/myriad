@@ -4,13 +4,3 @@ authors:
 template:
   params:
     bootswatch: cosmo
-reference:
-  - title: "All functions"
-    desc: Functions   
-    contents:
-      - font_mc
-      - font_myriad_light
-      - import_myriad
-      - import_myriad_semi
-      - theme_myriad
-      - theme_myriad_semi
