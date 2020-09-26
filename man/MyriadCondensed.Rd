@@ -4,11 +4,13 @@
 \name{font_mc}
 \alias{font_mc}
 \title{Myriad Pro Condensed font name R variable aliases}
-\format{length 1 character vector}
+\format{
+length 1 character vector
+}
 \usage{
 font_mc
 }
 \description{
-\code{font_myriad} == "\code{Myriad Pro Condensed}"
+\code{font_myriad} == "\verb{Myriad Pro Condensed}"
 }
 \keyword{datasets}

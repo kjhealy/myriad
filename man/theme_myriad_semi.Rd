@@ -4,25 +4,39 @@
 \alias{theme_myriad_semi}
 \title{theme_myriad_semi}
 \usage{
-theme_myriad_semi(base_family = "Myriad Pro SemiCondensed",
-  base_size = 11, plot_title_family = base_family,
-  plot_title_size = 14, plot_title_face = "bold",
-  plot_title_margin = 10, subtitle_family = "Myriad Pro SemiCondensed",
-  subtitle_size = 12, subtitle_face = "plain", subtitle_margin = 15,
-  strip_text_family = base_family, strip_text_size = 12,
+theme_myriad_semi(
+  base_family = "Myriad Pro SemiCondensed",
+  base_size = 11,
+  plot_title_family = base_family,
+  plot_title_size = 14,
+  plot_title_face = "bold",
+  plot_title_margin = 10,
+  subtitle_family = "Myriad Pro SemiCondensed",
+  subtitle_size = 12,
+  subtitle_face = "plain",
+  subtitle_margin = 15,
+  strip_text_family = base_family,
+  strip_text_size = 12,
   strip_text_face = "plain",
-  caption_family = "Myriad Pro SemiCondensed", caption_size = 6,
-  caption_face = "plain", caption_margin = 14,
-  axis_title_family = base_family, axis_title_size = 12,
-  axis_title_face = "plain", axis_title_just = "cc",
+  caption_family = "Myriad Pro SemiCondensed",
+  caption_size = 6,
+  caption_face = "plain",
+  caption_margin = 14,
+  axis_title_family = base_family,
+  axis_title_size = 12,
+  axis_title_face = "plain",
+  axis_title_just = "cc",
   plot_margin = grid::unit(c(5.5, 12, 5.5, 5.5), "pt"),
-  panel_spacing = grid::unit(0.5, "lines"), grid = TRUE,
-  axis = FALSE, ticks = FALSE)
+  panel_spacing = grid::unit(0.5, "lines"),
+  grid = TRUE,
+  axis = FALSE,
+  ticks = FALSE
+)
 }
 \arguments{
 \item{base_family, base_size}{base font family and size}
 
-\item{plot_title_family, plot_title_face, plot_title_size, plot_title_margin}{plot tilte family, face, size and margi}
+\item{plot_title_family, plot_title_face, plot_title_size, plot_title_margin}{plot title family, face, size and margi}
 
 \item{subtitle_family, subtitle_face, subtitle_size}{plot subtitle family, face and size}
 

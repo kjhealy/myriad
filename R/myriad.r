@@ -6,7 +6,7 @@
 #' @param strip_text_family,strip_text_face,strip_text_size facet label font family, face and size
 #' @param caption_family,caption_face,caption_size,caption_margin plot caption family, face, size and margin
 #' @param axis_title_family,axis_title_face,axis_title_size axis title font family, face and size
-#' @param axis_title_just axis title font justificationk one of `[blmcrt]`
+#' @param axis_title_just axis title font justification one of `[blmcrt]`
 #' @param plot_margin plot margin (specify with [ggplot2::margin])
 #' @param grid panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
@@ -19,7 +19,7 @@
 #' # seminal scatterplot
 #' ggplot(mtcars, aes(mpg, wt)) +
 #'   geom_point() +
-#'   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+#'   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
 #'        title="Seminal ggplot2 scatterplot example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
@@ -115,7 +115,7 @@ theme_myriad <- function(base_family="Myriad Pro Condensed", base_size = 12,
 
   ret <- ret + ggplot2::theme(axis.text.x=ggplot2::element_text(margin=ggplot2::margin(t=0)))
   ret <- ret + ggplot2::theme(axis.text.y=ggplot2::element_text(margin=ggplot2::margin(r=0)))
-  ret <- ret + ggplot2::theme(axis.title=ggplot2::element_text(size=axis_title_size, family=axis_title_family))
+  ret <- ret + ggplot2::theme(axis.title=ggplot2::element_text(family=axis_title_family))
   ret <- ret + ggplot2::theme(axis.title.x=ggplot2::element_text(hjust=xj, size=axis_title_size,
                                                family=axis_title_family, face=axis_title_face))
   ret <- ret + ggplot2::theme(axis.title.y=ggplot2::element_text(hjust=yj, size=axis_title_size,
@@ -272,12 +272,9 @@ theme_myriad_semi <- function (base_family = "Myriad Pro SemiCondensed", base_si
         l = 0, m = 0.5, c = 0.5, r = 1, t = 1)
     ret <- ret + ggplot2::theme(axis.text.x = ggplot2::element_text(margin = ggplot2::margin(t = 0)))
     ret <- ret + ggplot2::theme(axis.text.y = ggplot2::element_text(margin = ggplot2::margin(r = 0)))
-    ret <- ret + ggplot2::theme(axis.title = ggplot2::element_text(size = axis_title_size,
-        family = axis_title_family))
-    ret <- ret + ggplot2::theme(axis.title.x = ggplot2::element_text(hjust = xj,
-        size = axis_title_size, family = axis_title_family, face = axis_title_face))
-    ret <- ret + ggplot2::theme(axis.title.y = ggplot2::element_text(hjust = yj,
-        size = axis_title_size, family = axis_title_family, face = axis_title_face))
+    ret <- ret + ggplot2::theme(axis.title = ggplot2::element_text(family = axis_title_family))
+    ret <- ret + ggplot2::theme(axis.title.x = ggplot2::element_text(hjust = xj, size = axis_title_size, family = axis_title_family, face = axis_title_face))
+    ret <- ret + ggplot2::theme(axis.title.y = ggplot2::element_text(hjust = yj, size = axis_title_size, family = axis_title_family, face = axis_title_face))
     ret <- ret + ggplot2::theme(strip.text = ggplot2::element_text(hjust = 0, size = strip_text_size,
         face = strip_text_face, family = strip_text_family))
     ret <- ret + ggplot2::theme(panel.spacing.x = grid::unit(2, "lines"))
@@ -294,6 +291,70 @@ theme_myriad_semi <- function (base_family = "Myriad Pro SemiCondensed", base_si
     ret <- ret + ggplot2::theme(plot.margin = plot_margin)
     ret <- ret + ggplot2::theme(panel.spacing = panel_spacing)
     ret
+}
+
+
+#' A [ggplot2] theme using semibold variants of Adobe Myriad Pro, adapted from [hrbrthemes]'s roboto condensed.
+#'
+#' You should [import_myriad_semi]() first and also install the fonts on your
+#' system before trying to use this theme.
+#'
+#' @title theme_myriad_semi
+#' @inheritParams ggplot2::theme_minimal
+#' @importFrom grid unit
+#' @param base_family,base_size base font family and size
+#' @export
+#' @examples \dontrun{
+#' library(ggplot2)
+#' library(dplyr)
+#'
+#' # seminal scatterplot
+#' ggplot(mtcars, aes(mpg, wt)) +
+#'   geom_point() +
+#'   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+#'        title="Seminal ggplot2 scatterplot example",
+#'        subtitle="A plot that is only useful for demonstration purposes",
+#'        caption="Brought to you by the letter 'g'") +
+#'   theme_myriad_new()
+#'
+#' # seminal bar chart
+#'
+#' count(mpg, class) %>%
+#'   ggplot(aes(class, n)) +
+#'   geom_col() +
+#'   geom_text(aes(label=n), nudge_y=3) +
+#'   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+#'        title="Seminal ggplot2 bar chart example",
+#'        subtitle="A plot that is only useful for demonstration purposes",
+#'        caption="Brought to you by the letter 'g'") +
+#'   theme_myriad_semi(grid="Y") +
+#'   ggplot2::theme(axis.text.y=ggplot2::element_blank())
+#' }
+##' @author Kieran Healy
+theme_myriad_new <- function (base_family = "Myriad Pro SemiCondensed", base_size = 11)
+{
+
+  (theme_foundation(base_size = base_size, base_family = base_family) + theme(
+     line = element_line(colour = "gray20"),
+     rect = element_rect(fill = "white",
+                         linetype = 0, colour = NA),
+     text = element_text(colour = "black"),
+     axis.title = element_text(size = rel(1.1)),
+     axis.text = element_text(color = "black"),
+     axis.ticks = element_blank(),
+     axis.line = element_line(color = "gray90", size = 0.15),
+     legend.background = element_rect(),
+     legend.position = "top",
+     legend.direction = "horizontal",
+     legend.box = "vertical",
+     panel.grid = element_line(colour = "gray90", size = 0.1),
+     panel.grid.major = element_line(colour = "gray90", size = 0.1),
+     panel.grid.minor = element_line(colour = "gray90", size = 0.1),
+     plot.title = element_text(hjust = 0, size = rel(1.2), face = "bold"),
+      plot.margin = unit(c(5.5,12,5.5,5.5), "pt"),
+      panel.spacing = grid::unit(0.5, "lines"),
+     strip.background = element_rect()))
+
 }
 
 #' Import Myriad font for use in charts
@@ -313,6 +374,25 @@ import_myriad_semi <- function() {
                        bolditalic = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldCondIt.otf"))
     message(sprintf("You will likely need to install these fonts on your system as well. You can find them in [%s]",
         myriad_font_dir))
+}
+
+#' Import TTF Myriad font for use in charts
+#'
+#'
+#' @note This will take care of ensuring PDF/PostScript usage. The location of the
+#'   font directory is displayed after the base import is complete. It is highly
+#'   recommended that you install them on your system the same way you would any
+#'   other font you wish to use in other programs.
+#' @export
+import_myriad_semi_ttf <- function() {
+  myriad_font_dir <- system.file("fonts", "myriad-pro", package = "myriad")
+  sysfonts::font_add("Myriad Pro SemiCondensed",
+                     regular = paste0(myriad_font_dir, "/", "MyriadPro-SemiCn.ttf"),
+                     bold = paste0(myriad_font_dir, "/", "MyriadPro-BoldSemiCn.ttf"),
+                     italic = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldSemiCnIt.ttf"),
+                     bolditalic = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldCondIt.ttf"))
+  message(sprintf("You will likely need to install these fonts on your system as well. You can find them in [%s]",
+                  myriad_font_dir))
 }
 
 

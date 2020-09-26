@@ -4,24 +4,39 @@
 \alias{theme_myriad}
 \title{theme_myriad}
 \usage{
-theme_myriad(base_family = "Myriad Pro Condensed", base_size = 12,
-  plot_title_family = base_family, plot_title_size = 18,
-  plot_title_face = "bold", plot_title_margin = 10,
-  subtitle_family = "Myriad Pro Condensed", subtitle_size = 12,
-  subtitle_face = "plain", subtitle_margin = 15,
-  strip_text_family = base_family, strip_text_size = 12,
-  strip_text_face = "plain", caption_family = "Myriad Pro Condensed",
-  caption_size = 10, caption_face = "plain", caption_margin = 10,
-  axis_title_family = base_family, axis_title_size = 12,
-  axis_title_face = "plain", axis_title_just = "rt",
+theme_myriad(
+  base_family = "Myriad Pro Condensed",
+  base_size = 12,
+  plot_title_family = base_family,
+  plot_title_size = 18,
+  plot_title_face = "bold",
+  plot_title_margin = 10,
+  subtitle_family = "Myriad Pro Condensed",
+  subtitle_size = 12,
+  subtitle_face = "plain",
+  subtitle_margin = 15,
+  strip_text_family = base_family,
+  strip_text_size = 12,
+  strip_text_face = "plain",
+  caption_family = "Myriad Pro Condensed",
+  caption_size = 10,
+  caption_face = "plain",
+  caption_margin = 10,
+  axis_title_family = base_family,
+  axis_title_size = 12,
+  axis_title_face = "plain",
+  axis_title_just = "rt",
   plot_margin = ggplot2::margin(1, 1, 1, 1),
-  panel_spacing = ggplot2::unit(0.5, "lines"), grid = TRUE,
-  axis = FALSE, ticks = FALSE)
+  panel_spacing = ggplot2::unit(0.5, "lines"),
+  grid = TRUE,
+  axis = FALSE,
+  ticks = FALSE
+)
 }
 \arguments{
 \item{base_family, base_size}{base font family and size}
 
-\item{plot_title_family, plot_title_face, plot_title_size, plot_title_margin}{plot tilte family, face, size and margin}
+\item{plot_title_family, plot_title_face, plot_title_size, plot_title_margin}{plot title family, face, size and margin}
 
 \item{subtitle_family, subtitle_face, subtitle_size}{plot subtitle family, face and size}
 
@@ -33,7 +48,7 @@ theme_myriad(base_family = "Myriad Pro Condensed", base_size = 12,
 
 \item{axis_title_family, axis_title_face, axis_title_size}{axis title font family, face and size}
 
-\item{axis_title_just}{axis title font justificationk one of `[blmcrt]`}
+\item{axis_title_just}{axis title font justification one of `[blmcrt]`}
 
 \item{plot_margin}{plot margin (specify with [ggplot2::margin])}
 
@@ -54,7 +69,7 @@ library(dplyr)
 # seminal scatterplot
 ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
-  labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
        title="Seminal ggplot2 scatterplot example",
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'") +

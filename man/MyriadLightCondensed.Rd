@@ -4,11 +4,13 @@
 \name{font_myriad_light}
 \alias{font_myriad_light}
 \title{Myriad Pro Light Condensed font name R variable aliases}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 font_myriad_light
 }
 \description{
-\code{font_fc_light} == "\code{Myriad Pro Light Condensed}"
+\code{font_fc_light} == "\verb{Myriad Pro Light Condensed}"
 }
 \keyword{datasets}
