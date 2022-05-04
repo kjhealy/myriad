@@ -7,7 +7,7 @@
 theme_myriad_semi(
   base_family = "Myriad Pro SemiCondensed",
   base_size = 11,
-  plot_title_family = base_family,
+  plot_title_family = "Myriad Pro SemiCondensed",
   plot_title_size = 14,
   plot_title_face = "bold",
   plot_title_margin = 10,

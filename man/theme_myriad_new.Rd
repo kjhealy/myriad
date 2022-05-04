@@ -2,7 +2,7 @@
 % Please edit documentation in R/myriad.r
 \name{theme_myriad_new}
 \alias{theme_myriad_new}
-\title{theme_myriad_semi}
+\title{theme_myriad_new}
 \usage{
 theme_myriad_new(base_family = "Myriad Pro SemiCondensed", base_size = 11)
 }
