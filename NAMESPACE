@@ -2,7 +2,9 @@
 
 export(import_myriad_semi)
 export(theme_foundation)
+export(theme_myriad_map)
 export(theme_myriad_new)
+export(theme_myriad_nymap)
 export(theme_myriad_semi)
 importFrom(ggplot2,theme_minimal)
 importFrom(grid,unit)
