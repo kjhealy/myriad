@@ -1,14 +1,16 @@
 Package: myriad
 Title: Myriad Pro themes for ggplot
-Version: 0.0.5.9000
+Version: 0.1.1.9000
 Author: Kieran Healy
 Maintainer: Kieran Healy <kjhealy@gmail.com>
 Description: Myriad Pro themes for ggplot.
 Depends: R (>= 3.3.2)
 Imports:
-    sysfonts
+    dplyr,
+    ggplot2,
+    systemfonts
 Suggests: ggplot2    
 License: MIT License
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.0
