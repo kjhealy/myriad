@@ -1,6 +1,8 @@
 #' Import all Myriad Pro font faces and styles for use in graphs
+#' as "Myriad Pro".
 #' This will work for devices that use systemfonts to process fonts
 #' But it won't work for PDFs, including ggsave() where the output is a PDF
+#' Use showtext::showtext_auto() beforehand
 #'
 #' @param family The font family you want to import
 #' @param silent Report on what's been imported or not
@@ -19,13 +21,41 @@ import_myriad <- function(family = "Myriad Pro", silent = TRUE) {
 }
 
 
-#' @rdname import_myriad
+#' Import Myriad SemiCondensed only
+#'
+#' @return Makes "Myriad SemiCondensed" available for use
+#' @export
+#'
 #' @examples
 #' \dontrun{
-#' import_myriad_semi()
 #' }
+import_myriad_semi <- function() {
+  myriad_font_dir <- system.file("fonts", "myriad-pro", package = "myriad")
+  sysfonts::font_add("Myriad Pro SemiCondensed",
+                     regular = paste0(myriad_font_dir, "/", "MyriadPro-SemiCn.otf"),
+                     bold = paste0(myriad_font_dir, "/", "MyriadPro-BoldSemiCn.otf"),
+                     italic = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldSemiCnIt.otf"),
+                     bolditalic = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldCondIt.otf"))
+}
+
+
+
+#' Import Myriad Condensed only
+#'
+#' @return Makes "Myriad Condensed" available for use
 #' @export
-import_myriad_semi <- import_myriad
+#'
+#' @examples
+#' \dontrun{
+#' }
+import_myriad_condensed <- function() {
+  myriad_font_dir <- system.file("fonts", "myriad-pro", package = "myriad")
+  sysfonts::font_add("Myriad Pro Condensed",
+                     regular = paste0(myriad_font_dir, "/", "MyriadPro-Cond.otf"),
+                     bold = paste0(myriad_font_dir, "/", "MyriadPro-BoldCond.otf"),
+                     italic = paste0(myriad_font_dir, "/", "MyriadPro-CondIt.otf"),
+                     bolditalic = paste0(myriad_font_dir, "/", "MyriadPro-BoldCondIt.otf"))
+}
 
 
 #' Import Myriad SemiCondensed for use in PDFs

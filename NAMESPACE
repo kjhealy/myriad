@@ -2,6 +2,7 @@
 
 export(ggsave_pdf)
 export(import_myriad)
+export(import_myriad_condensed)
 export(import_myriad_condensed_pdf)
 export(import_myriad_pdf)
 export(import_myriad_semi)

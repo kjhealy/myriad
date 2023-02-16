@@ -2,14 +2,13 @@
 % Please edit documentation in R/fonts.R
 \name{import_myriad}
 \alias{import_myriad}
-\alias{import_myriad_semi}
 \title{Import all Myriad Pro font faces and styles for use in graphs
+as "Myriad Pro".
 This will work for devices that use systemfonts to process fonts
-But it won't work for PDFs, including ggsave() where the output is a PDF}
+But it won't work for PDFs, including ggsave() where the output is a PDF
+Use showtext::showtext_auto() beforehand}
 \usage{
 import_myriad(family = "Myriad Pro", silent = TRUE)
-
-import_myriad_semi(family = "Myriad Pro", silent = TRUE)
 }
 \arguments{
 \item{family}{The font family you want to import}
@@ -18,14 +17,11 @@ import_myriad_semi(family = "Myriad Pro", silent = TRUE)
 }
 \description{
 Import all Myriad Pro font faces and styles for use in graphs
+as "Myriad Pro".
 This will work for devices that use systemfonts to process fonts
 But it won't work for PDFs, including ggsave() where the output is a PDF
+Use showtext::showtext_auto() beforehand
 }
 \note{
 From https://yjunechoe.github.io/posts/2021-06-24-setting-up-and-debugging-custom-fonts/.
-}
-\examples{
-\dontrun{
-import_myriad_semi()
-}
 }

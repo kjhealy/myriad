@@ -1,30 +1,39 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # myriad
 
 ## About
 
-Myriad Pro-based themes for ggplot, `theme_myriad()` and
-`theme_myriad_semi()`. Various hacks / workaround functions to try to
-have both a systemfonts/ragg pipeline for pngs and a showtext one for
-pdf devices.
+Myriad Pro-based themes for ggplot, `theme_myriad()` and `theme_myriad_semi()`. Various hacks / workaround functions to try to have both a systemfonts/ragg pipeline for pngs and a showtext one for pdf devices.
 
-Note that this repo does not include the Myriad font files (the `.otf`
-files), which are owned by Adobe. You may already have them installed on
-your computer, or they may have come bundled with your copy of Acrobat
-Reader or other Adobe software.
+Note that this repo does not include the Myriad font files (the `.otf` files), which are owned by Adobe. You may already have them installed on your computer, or they may have come bundled with your copy of Acrobat Reader or other Adobe software.
+
 
 ## Usage
 
-When creating PDFs, use with `showtext`.
+When creating PDFs, use with `showtext`. 
 
-``` r
+```{r setup, message=FALSE}
 library(tidyverse)
 library(ggrepel)
+
+
 ```
 
-``` r
+```{r, message=FALSE}
 library(showtext)
 showtext_opts(dpi = 300)
 showtext_auto()
@@ -39,11 +48,12 @@ import_myriad_condensed()
 
 # ggplot theme
 theme_set(theme_myriad_semi())
+
 ```
 
 # Basic Test
 
-``` r
+```{r, fig.width=6, fig.height=4}
 p <- ggplot(mtcars, 
             aes(x = wt, y = mpg)) + 
   geom_point() + 
@@ -54,17 +64,16 @@ p <- ggplot(mtcars,
 p
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
-
 # Check PDF works
 
-``` r
+```{r}
 ggsave("man/figures/ggfont-test-myrnew-2.pdf", p, width = 6, height = 4)
 ```
 
+
 # With labels
 
-``` r
+```{r, fig.width=8, fig.height=4}
 out <- mtcars |>
   mutate(car = rownames(mtcars)) |> 
   as_tibble() |> 
@@ -75,14 +84,13 @@ out <- mtcars |>
        subtitle = "Subtitle")
 
 out
-#> Warning: ggrepel: 6 unlabeled data points (too many overlaps). Consider
-#> increasing max.overlaps
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ## Check PDF works
 
-``` r
+```{r}
 ggsave("man/figures/ggfont-test-myrnew-3.pdf", out, width = 12, height = 8)
 ```
+
+
