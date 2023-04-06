@@ -1,8 +1,8 @@
 #' Import all Myriad Pro font faces and styles for use in graphs
 #' as "Myriad Pro".
-#' This will work for devices that use systemfonts to process fonts
-#' But it won't work for PDFs, including ggsave() where the output is a PDF
-#' Use showtext::showtext_auto() beforehand
+#'
+#' This will work for devices that use `systemfonts` to process fonts.
+#' For PDFs, use showtext::showtext_auto() beforehand
 #'
 #' @param family The font family you want to import
 #' @param silent Report on what's been imported or not
@@ -22,6 +22,9 @@ import_myriad <- function(family = "Myriad Pro", silent = TRUE) {
 
 
 #' Import Myriad SemiCondensed only
+#'
+#' This will work for devices that use `systemfonts` to process fonts.
+#' For PDFs, use showtext::showtext_auto() beforehand
 #'
 #' @return Makes "Myriad SemiCondensed" available for use
 #' @export

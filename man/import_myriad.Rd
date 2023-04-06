@@ -3,10 +3,7 @@
 \name{import_myriad}
 \alias{import_myriad}
 \title{Import all Myriad Pro font faces and styles for use in graphs
-as "Myriad Pro".
-This will work for devices that use systemfonts to process fonts
-But it won't work for PDFs, including ggsave() where the output is a PDF
-Use showtext::showtext_auto() beforehand}
+as "Myriad Pro".}
 \usage{
 import_myriad(family = "Myriad Pro", silent = TRUE)
 }
@@ -16,11 +13,8 @@ import_myriad(family = "Myriad Pro", silent = TRUE)
 \item{silent}{Report on what's been imported or not}
 }
 \description{
-Import all Myriad Pro font faces and styles for use in graphs
-as "Myriad Pro".
-This will work for devices that use systemfonts to process fonts
-But it won't work for PDFs, including ggsave() where the output is a PDF
-Use showtext::showtext_auto() beforehand
+This will work for devices that use `systemfonts` to process fonts.
+For PDFs, use showtext::showtext_auto() beforehand
 }
 \note{
 From https://yjunechoe.github.io/posts/2021-06-24-setting-up-and-debugging-custom-fonts/.
