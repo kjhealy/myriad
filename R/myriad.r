@@ -203,39 +203,6 @@ theme_myriad_map <- function() {
 }
 
 
-#' Myriad map theme PDF
-#'
-#' You should [import_myriad_semi]() first and also install the fonts on your
-#' system before trying to use this theme.
-#'
-#' @title theme_myriad_map
-#' @importFrom grid unit
-#' @export
-#' @examples
-#' \dontrun{
-#' }
-theme_myriad_map_pdf <- function() {
-  require(grid)
-  theme_myriad_semi_pdf() %+replace%
-    theme(axis.line=element_blank(),
-          axis.text=element_blank(),
-          axis.ticks=element_blank(),
-          axis.title=element_blank(),
-          axis.text.x=element_blank(),
-          axis.text.y=element_blank(),
-          panel.background=element_blank(),
-          panel.border=element_blank(),
-          panel.grid=element_blank(),
-          panel.grid.major=element_blank(),
-          panel.grid.minor=element_blank(),
-          panel.spacing=unit(0, "lines"),
-          plot.background=element_blank(),
-          plot.title = element_text(hjust = 0),
-          legend.justification = c(0,0),
-          legend.position = c(0,0)
-    )
-}
-
 
 #' Myriad New York City map theme
 #'
@@ -272,62 +239,6 @@ theme_myriad_nymap <- function() {
     )
 }
 
-
-#' Myriad New York City map theme PDF
-#'
-#' Map theme suitable for NYC maps.
-#' You should [import_myriad_semi]() first and also install the fonts on your
-#' system before trying to use this theme.
-#'
-#' @importFrom grid unit
-#' @export
-#'
-#' @examples
-#' \dontrun{
-#' }
-theme_myriad_nymap_pdf <- function() {
-  require(grid)
-  theme_myriad_semi_pdf() %+replace%
-    theme(axis.line=element_blank(),
-          axis.text=element_blank(),
-          axis.ticks=element_blank(),
-          axis.title=element_blank(),
-          axis.text.x=element_blank(),
-          axis.text.y=element_blank(),
-          panel.background=element_blank(),
-          panel.border=element_blank(),
-          panel.grid=element_blank(),
-          panel.grid.major=element_blank(),
-          panel.grid.minor=element_blank(),
-          panel.spacing=unit(0, "lines"),
-          plot.background=element_blank(),
-          plot.title = element_text(hjust = 0),
-          legend.justification = c(0,0),
-          legend.position = c(0.1, 0.6),
-          legend.direction = "horizontal"
-    )
-}
-
-
-
-#' PDF/showtext version of theme_myriad_semi()
-#'
-#' @param base_family Base font
-#' @param title_family Title font
-#'
-#' @return ggplot2 theme
-#' @export
-#'
-#' @examples
-#' \dontrun{
-#'
-#' }
-theme_myriad_semi_pdf <- function (base_family = "Myriad Pro PDF",
-                                     title_family = "Myriad Pro PDF")
-{
-  theme_myriad_semi(base_family = base_family,
-                    title_family = title_family)
-}
 
 
 

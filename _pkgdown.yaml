@@ -1,6 +1,40 @@
+destination: docs
 authors:
   Kieran Healy:
-    href: http://kieranhealy.org    
+    href: http://kieranhealy.org
+
+url: https://kjhealy.github.io/myriad
+
 template:
-  params:
-    bootswatch: cosmo
+  package: preferably
+
+reference:
+- title: Import fonts
+  desc: import Myriad fonts for use in plots
+  contents:
+  - import_myriad
+  - import_myriad_semi
+  - import_myriad_condensed
+- title: Theme functions
+  desc: Basic, map, and NY map themse
+  contents:
+  - theme_myriad
+  - theme_myriad_semi
+  - theme_myriad_map
+  - theme_myriad_nymap
+
+
+navbar:
+  right:
+   - icon: fa-github
+     href: https://github.com/kjhealy/myriad
+
+figures:
+  dev: grDevices::png
+  dpi: 200
+  dev.args: []
+  fig.ext: png
+  fig.width: 7.2916667
+  fig.height: ~
+  fig.retina: 2
+  fig.asp: 1.618
