@@ -14,7 +14,7 @@
 #' and-non colour defaults of the default \pkg{ggplot2} themes in place.
 #'
 #' @inheritParams ggplot2::theme_minimal
-#'
+#' @keywords internal
 #' @export
 #' @importFrom ggplot2 theme_minimal
 theme_foundation <- function(base_size=12, base_family="") {
