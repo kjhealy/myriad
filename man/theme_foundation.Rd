@@ -26,3 +26,4 @@ elements (\code{line}, \code{rect}, and \code{title}), which have
 \code{colour = "black"}, and \code{fill = "white"}. This leaves the spacing
 and-non colour defaults of the default \pkg{ggplot2} themes in place.
 }
+\keyword{internal}
