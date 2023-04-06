@@ -5,10 +5,10 @@
 
 ## About
 
-Myriad Pro-based themes for ggplot, `theme_myriad()` and
-`theme_myriad_semi()`. Various hacks / workaround functions to try to
-have both a systemfonts/ragg pipeline for pngs and a showtext one for
-pdf devices.
+Myriad Pro-based theme for ggplot, providing `theme_myriad_semi()`,
+`theme_myriad_map()` and `theme_myriad_nymap()`. All based on Myriad Pro
+SemiCondensed face, with Myriad Pro Condensed also available for labels
+inside the plot area.
 
 Note that this repo does not include the Myriad font files (the `.otf`
 files), which are owned by Adobe. You may already have them installed on
@@ -62,7 +62,7 @@ p
 ggsave("man/figures/ggfont-test-myrnew-2.pdf", p, width = 6, height = 4)
 ```
 
-# With labels
+# With labels (using Myriad Pro Condensed)
 
 ``` r
 out <- mtcars |>
