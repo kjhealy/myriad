@@ -19,7 +19,6 @@ reference:
 - title: Theme functions
   desc: Basic, map, and NY map themse
   contents:
-  - theme_myriad
   - theme_myriad_semi
   - theme_myriad_map
   - theme_myriad_nymap
