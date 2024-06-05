@@ -43,7 +43,7 @@ theme_myriad_semi <-
           margin = margin(),
           debug = FALSE
         ),
-        axis.line = element_line(color = "gray90", linewidth = 0.15),
+        axis.line = element_line(color = "gray10", linewidth = 0.5),
         axis.text = element_text(color = "black"),
         axis.text.x = element_text(margin = margin(t = 0.8 *
                                                      half_line /
@@ -57,7 +57,7 @@ theme_myriad_semi <-
         axis.text.y.right = element_text(margin = margin(l = 0.8 *
                                                            half_line /
                                                            2), hjust = 0),
-        axis.ticks = element_line(colour = "grey20"),
+        axis.ticks = element_line(colour = "grey10"),
         axis.ticks.length = unit(half_line / 2, "pt"),
         axis.ticks.length.x = NULL,
         axis.ticks.length.x.top = NULL,
