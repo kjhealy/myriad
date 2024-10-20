@@ -73,13 +73,14 @@ ggsave("man/figures/ggfont-test-myrnew-2.pdf", p, width = 6, height = 4)
 
 # With labels (using Myriad Pro Condensed)
 
-```{r, fig.width=8, fig.height=4}
+```{r, fig.width=6, fig.height=12}
 out <- mtcars |>
   mutate(car = rownames(mtcars)) |> 
   as_tibble() |> 
   ggplot(aes(x = wt, y = mpg, label = car)) + 
+  geom_point() + 
   geom_text_repel(family = "Myriad Pro Condensed") +
-  facet_wrap(~ cyl) + 
+  facet_wrap(~ cyl, ncol = 1) + 
   labs(title = "Title", 
        subtitle = "Subtitle")
 
