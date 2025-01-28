@@ -6,6 +6,9 @@
 \usage{
 import_myriad_semi()
 }
+\arguments{
+\item{myriad_font_dir}{Path to font files}
+}
 \value{
 Makes "Myriad SemiCondensed" available for use
 }
