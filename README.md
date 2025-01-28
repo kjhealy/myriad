@@ -69,13 +69,14 @@ out <- mtcars |>
   mutate(car = rownames(mtcars)) |> 
   as_tibble() |> 
   ggplot(aes(x = wt, y = mpg, label = car)) + 
+  geom_point() + 
   geom_text_repel(family = "Myriad Pro Condensed") +
-  facet_wrap(~ cyl) + 
+  facet_wrap(~ cyl, ncol = 1) + 
   labs(title = "Title", 
        subtitle = "Subtitle")
 
 out
-#> Warning: ggrepel: 6 unlabeled data points (too many overlaps). Consider
+#> Warning: ggrepel: 2 unlabeled data points (too many overlaps). Consider
 #> increasing max.overlaps
 ```
 
