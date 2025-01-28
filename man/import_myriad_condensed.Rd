@@ -5,14 +5,22 @@
 \title{Import Myriad Condensed only}
 \usage{
 import_myriad_condensed()
+
+import_myriad_condensed()
 }
 \value{
 Makes "Myriad Condensed" available for use
+
+Makes "Socviz Condensed" available for use
 }
 \description{
 Import Myriad Condensed only
+
+Import Socviz Condensed
 }
 \examples{
+\dontrun{
+}
 \dontrun{
 }
 }
