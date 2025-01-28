@@ -6,8 +6,8 @@ authors:
 url: https://kjhealy.github.io/myriad
 
 template:
-  package: preferably
   bootstrap: 5
+  bootswatch: lux
 
 reference:
 - title: Import fonts
