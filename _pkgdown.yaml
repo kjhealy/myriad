@@ -16,12 +16,17 @@ reference:
   - import_myriad
   - import_myriad_semi
   - import_myriad_condensed
+  - import_socviz_semi
+  - import_socviz_condensed
 - title: Theme functions
   desc: Basic, map, and NY map themse
   contents:
   - theme_myriad_semi
   - theme_myriad_map
   - theme_myriad_nymap
+  - theme_socviz_semi
+  - theme_socviz_map
+  - theme_socviz_nymap
 
 
 navbar:
