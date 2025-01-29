@@ -5,21 +5,15 @@
 \title{Import Myriad SemiCondensed only}
 \usage{
 import_myriad_semi()
-
-import_myriad_semi()
 }
 \value{
 Makes "Myriad SemiCondensed" available for use
-
-Makes "Socviz SemiCondensed" available for use
 }
 \description{
 This will work for devices that use `systemfonts` to process fonts.
 For PDFs, use showtext::showtext_auto() beforehand
 }
 \examples{
-\dontrun{
-}
 \dontrun{
 }
 }

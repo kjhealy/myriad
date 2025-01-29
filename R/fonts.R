@@ -88,16 +88,14 @@ import_myriad_condensed <- function() {
 #' @examples
 #' \dontrun{
 #' }
-import_myriad_semi <- function() {
+import_socviz_semi <- function() {
   myriad_font_dir <- system.file("fonts", "myriad-pro", package = "myriad")
 
-  systemfonts::register_font(
-    name = "Socviz SemiCondensed",
-    plain = paste0(myriad_font_dir, "/", "SocvizSemiCondensed-Regular.otf"),
-    bold = paste0(myriad_font_dir, "/", "SocvizSemiCondensed-Bold.otf"),
-    italic = paste0(myriad_font_dir, "/", "SocvizSemiCondensed-Italic.otf"),
-    bolditalic = paste0(myriad_font_dir, "/", "SocvizSemiCondensed-BoldIta.otf")
-  )
+  sysfonts::font_add("Socviz SemiCondensed",
+                     regular = paste0(myriad_font_dir, "/", "SocvizSemiCondensed-Regular.otf"),
+                     bold = paste0(myriad_font_dir, "/", "SocvizSemiCondensed-Bold.otf"),
+                     italic = paste0(myriad_font_dir, "/", "SocvizSemiCondensed-Italic.otf"),
+                     bolditalic = paste0(myriad_font_dir, "/", "SocvizSemiCondensed-BoldIta.otf"))
 
 }
 
@@ -111,14 +109,13 @@ import_myriad_semi <- function() {
 #' @examples
 #' \dontrun{
 #' }
-import_myriad_condensed <- function() {
+import_socviz_condensed <- function() {
   myriad_font_dir <- system.file("fonts", "myriad-pro", package = "myriad")
 
-  systemfonts::register_font(
-    name = "Socviz Condensed",
-    plain = paste0(myriad_font_dir, "/", "SocvizCondensed-Regular.otf"),
-    bold = paste0(myriad_font_dir, "/", "SocvizCondensed-Bold.otf"),
-    italic = paste0(myriad_font_dir, "/", "SocvizCondensed-Italic.otf"),
-    bolditalic = paste0(myriad_font_dir, "/", "SocvizCondensed-BoldItalic.otf"))
+    sysfonts::font_add("Socviz Condensed",
+                       regular = paste0(myriad_font_dir, "/", "SocvizCondensed-Regular.otf"),
+                       bold = paste0(myriad_font_dir, "/", "SocvizCondensed-Bold.otf"),
+                       italic = paste0(myriad_font_dir, "/", "SocvizCondensed-Italic.otf"),
+                       bolditalic = paste0(myriad_font_dir, "/", "SocvizCondensed-BoldItalic.otf"))
 
   }

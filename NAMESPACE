@@ -3,6 +3,8 @@
 export(import_myriad)
 export(import_myriad_condensed)
 export(import_myriad_semi)
+export(import_socviz_condensed)
+export(import_socviz_semi)
 export(theme_foundation)
 export(theme_myriad_map)
 export(theme_myriad_nymap)
