@@ -8,11 +8,11 @@
 #' @param silent Report on what's been imported or not
 #' @note From https://yjunechoe.github.io/posts/2021-06-24-setting-up-and-debugging-custom-fonts/.
 #' @export
-import_myriad <- function(family = "Myriad Pro", silent = TRUE) {
-  font_specs <- systemfonts::system_fonts() %>%
-    dplyr::filter(family == .env[["family"]]) %>%
-    dplyr::mutate(family = paste(.data[["family"]], .data[["style"]])) %>%
-    dplyr::select(plain = .data[["path"]], name = .data[["family"]])
+import_myriad <- function(font_family = "Myriad Pro", silent = TRUE) {
+  font_specs <- systemfonts::system_fonts() |>
+    dplyr::filter(family == font_family) |>
+    dplyr::mutate(family = paste(font_family, style)) |>
+    dplyr::select(plain = path, name = family)
 
   purrr::pwalk(as.list(font_specs), systemfonts::register_font)
 

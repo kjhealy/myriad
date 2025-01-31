@@ -5,12 +5,12 @@
 \title{Import all Myriad Pro font faces and styles for use in graphs
 as "Myriad Pro".}
 \usage{
-import_myriad(family = "Myriad Pro", silent = TRUE)
+import_myriad(font_family = "Myriad Pro", silent = TRUE)
 }
 \arguments{
-\item{family}{The font family you want to import}
-
 \item{silent}{Report on what's been imported or not}
+
+\item{family}{The font family you want to import}
 }
 \description{
 This will work for devices that use `systemfonts` to process fonts.
