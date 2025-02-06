@@ -234,11 +234,11 @@ theme_myriad_nymap <- function() {
           plot.background=element_blank(),
           plot.title = element_text(hjust = 0),
           legend.justification = c(0,0),
-          legend.position = c(0.1, 0.6),
+          legend.position = "inside",
+          legend.position.inside = c(0.1, 0.6),
           legend.direction = "horizontal"
     )
 }
-
 
 #' A [ggplot2] theme using semibold variants of Adobe Myriad Pro
 #'
