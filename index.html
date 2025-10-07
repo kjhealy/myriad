@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">myriad</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,16 +45,17 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="myriad">myriad<a class="anchor" aria-label="anchor" href="#myriad"></a>
 </h1></div>
+<p>This package is not really meant for general use.</p>
 <div class="section level2">
 <h2 id="about">About<a class="anchor" aria-label="anchor" href="#about"></a>
 </h2>
-<p>Myriad Pro-based theme for ggplot, providing <code><a href="reference/theme_myriad_semi.html">theme_myriad_semi()</a></code>, <code><a href="reference/theme_myriad_map.html">theme_myriad_map()</a></code> and <code><a href="reference/theme_myriad_nymap.html">theme_myriad_nymap()</a></code>. All based on Myriad Pro SemiCondensed face, with Myriad Pro Condensed also available for labels inside the plot area.</p>
+<p>Myriad Pro-based theme for ggplot, providing <code><a href="reference/theme_myriad_semi.html">theme_myriad_semi()</a></code>, <code><a href="reference/theme_myriad_map.html">theme_myriad_map()</a></code> and <code><a href="reference/theme_myriad_nymap.html">theme_myriad_nymap()</a></code>, along with <code>_socviz_</code> versions of all of these, which are identical but premised on the existence of top-level fonts named Socviz that pull out the SemiCondensed and Condensed versions of Myriad, as <a href="https://kieranhealy.org/blog/archives/2025/02/06/kerning-and-kerning-in-a-widening-gyre/" class="external-link">detailed here</a>. All based on Myriad Pro SemiCondensed face, with Myriad Pro Condensed also available for labels inside the plot area.</p>
 <p>Note that this repo does not include the Myriad font files (the <code>.otf</code> files), which are owned by Adobe. You may already have them installed on your computer, or they may have come bundled with your copy of Acrobat Reader or other Adobe software.</p>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>When creating PDFs, use with <code>showtext</code>.</p>
+<p>When creating PDFs, use with <code>showtext</code>. (To get embedded fonts with proper kerning in a PDF you will need to use Cairo and sacrifice several goats. Again, <a href="https://kieranhealy.org/blog/archives/2025/02/06/kerning-and-kerning-in-a-widening-gyre/" class="external-link">see here for the soul-crushing details</a>.)</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggrepel.slowkow.com/" class="external-link">ggrepel</a></span><span class="op">)</span></span></code></pre></div>
@@ -66,13 +67,13 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">myriad</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Semi variant</span></span>
-<span><span class="fu"><a href="reference/import_myriad_semi.html">import_myriad_semi</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/import_socviz_semi.html">import_socviz_semi</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Condensed for in-graph text</span></span>
-<span><span class="fu"><a href="reference/import_myriad_condensed.html">import_myriad_condensed</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/import_socviz_condensed.html">import_socviz_condensed</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># ggplot theme</span></span>
-<span><span class="fu">theme_set</span><span class="op">(</span><span class="fu"><a href="reference/theme_myriad_semi.html">theme_myriad_semi</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">theme_set</span><span class="op">(</span><span class="fu"><a href="reference/theme_socviz_semi.html">theme_socviz_semi</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level1">
@@ -104,7 +105,7 @@
 <span>  <span class="fu">as_tibble</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">wt</span>, y <span class="op">=</span> <span class="va">mpg</span>, label <span class="op">=</span> <span class="va">car</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>family <span class="op">=</span> <span class="st">"Myriad Pro Condensed"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>family <span class="op">=</span> <span class="st">"Socviz Condensed"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">cyl</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Title"</span>, </span>
 <span>       subtitle <span class="op">=</span> <span class="st">"Subtitle"</span><span class="op">)</span></span>
