@@ -13,6 +13,7 @@ reference:
 - title: Import fonts
   desc: import Myriad fonts for use in plots
   contents:
+  - copy_myriad_fonts
   - import_myriad
   - import_myriad_semi
   - import_myriad_condensed

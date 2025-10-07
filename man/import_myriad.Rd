@@ -8,14 +8,14 @@ as "Myriad Pro".}
 import_myriad(font_family = "Myriad Pro", silent = TRUE)
 }
 \arguments{
-\item{silent}{Report on what's been imported or not}
+\item{font_family}{The font family you want to import}
 
-\item{family}{The font family you want to import}
+\item{silent}{Report on what's been imported or not}
 }
 \description{
 This will work for devices that use `systemfonts` to process fonts.
 For PDFs, use showtext::showtext_auto() beforehand
 }
 \note{
-From https://yjunechoe.github.io/posts/2021-06-24-setting-up-and-debugging-custom-fonts/.
+Modified from https://yjunechoe.github.io/posts/2021-06-24-setting-up-and-debugging-custom-fonts/.
 }
