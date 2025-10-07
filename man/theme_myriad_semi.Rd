@@ -6,7 +6,7 @@
 \usage{
 theme_myriad_semi(
   base_size = 12,
-  base_family = "Myriad Pro Condensed",
+  base_family = "Myriad Pro SemiCondensed",
   title_family = "Myriad Pro Semibold SemiCondensed",
   base_line_size = base_size/24,
   base_rect_size = base_size/24

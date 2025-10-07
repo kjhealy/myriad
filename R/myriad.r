@@ -11,7 +11,7 @@
 #' @author Kieran Healy
 theme_myriad_semi <- function(
   base_size = 12,
-  base_family = "Myriad Pro Condensed",
+  base_family = "Myriad Pro SemiCondensed",
   title_family = "Myriad Pro Semibold SemiCondensed",
   base_line_size = base_size / 24,
   base_rect_size = base_size / 24
@@ -300,7 +300,7 @@ theme_myriad_nymap <- function() {
 #' @author Kieran Healy
 theme_socviz_semi <- function(
   base_size = 12,
-  base_family = "Socviz Condensed",
+  base_family = "Socviz SemiCondensed",
   title_family = "Socviz SemiCondensed",
   base_line_size = base_size / 24,
   base_rect_size = base_size / 24

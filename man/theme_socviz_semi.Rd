@@ -6,7 +6,7 @@
 \usage{
 theme_socviz_semi(
   base_size = 12,
-  base_family = "Socviz Condensed",
+  base_family = "Socviz SemiCondensed",
   title_family = "Socviz SemiCondensed",
   base_line_size = base_size/24,
   base_rect_size = base_size/24
