@@ -7,11 +7,11 @@
 ## Citation
 
 Healy K (2026). *myriad: Myriad Pro themes for ggplot*. R package
-version 0.9.1.9000.
+version 0.10.0.
 
     @Manual{,
       title = {myriad: Myriad Pro themes for ggplot},
       author = {Kieran Healy},
       year = {2026},
-      note = {R package version 0.9.1.9000},
+      note = {R package version 0.10.0},
     }

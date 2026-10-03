@@ -30,8 +30,11 @@ Basic, map, and NY map themse
 - [`theme_myriad_nymap()`](https://kjhealy.github.io/myriad/reference/theme_myriad_nymap.md)
   : Myriad New York City map theme
 - [`theme_socviz_semi()`](https://kjhealy.github.io/myriad/reference/theme_socviz_semi.md)
+  [`theme_socviz_kjh()`](https://kjhealy.github.io/myriad/reference/theme_socviz_semi.md)
   : theme_socviz_semi
 - [`theme_socviz_map()`](https://kjhealy.github.io/myriad/reference/theme_socviz_map.md)
+  [`theme_socviz_kjh_map()`](https://kjhealy.github.io/myriad/reference/theme_socviz_map.md)
   : theme_socviz_map
 - [`theme_socviz_nymap()`](https://kjhealy.github.io/myriad/reference/theme_socviz_nymap.md)
+  [`theme_socviz_kjh_nymap()`](https://kjhealy.github.io/myriad/reference/theme_socviz_nymap.md)
   : Socviz New York City map theme
