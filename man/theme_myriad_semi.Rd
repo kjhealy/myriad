@@ -7,20 +7,27 @@
 theme_myriad_semi(
   base_size = 12,
   base_family = "Myriad Pro SemiCondensed",
-  title_family = "Myriad Pro Semibold SemiCondensed",
+  header_family = "Myriad Pro Semibold SemiCondensed",
   base_line_size = base_size/24,
-  base_rect_size = base_size/24
+  base_rect_size = base_size/24,
+  ink = "black",
+  paper = "white",
+  accent = "#0072B2"
 )
 }
 \arguments{
-\item{base_family, title_family, base_size, base_line_size, base_rect_size}{base font family and size}
+\item{base_family, header_family, base_size, base_line_size, base_rect_size}{base
+font family, title font family, and sizes}
+
+\item{ink, paper, accent}{foreground, background, and accent colours}
 }
 \description{
 A [ggplot2] theme using semibold variants of Adobe Myriad Pro
 }
 \details{
 You should [import_myriad_semi]() first and also install the fonts on your
-system before trying to use this theme.
+system before trying to use this theme. Requires ggplot2 4.0.0 or later. The
+theme carries its own discrete colour and fill palette.
 }
 \examples{
 \dontrun{

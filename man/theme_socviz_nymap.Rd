@@ -2,12 +2,16 @@
 % Please edit documentation in R/myriad.r
 \name{theme_socviz_nymap}
 \alias{theme_socviz_nymap}
+\alias{theme_socviz_kjh_nymap}
 \title{Socviz New York City map theme}
 \usage{
 theme_socviz_nymap()
+
+theme_socviz_kjh_nymap()
 }
 \description{
-Map theme suitable for NYC maps.
+Map theme suitable for NYC maps. As [theme_socviz_map()], but with the
+legend placed inside the plot area.
 }
 \examples{
 \dontrun{

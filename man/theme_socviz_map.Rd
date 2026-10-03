@@ -2,12 +2,19 @@
 % Please edit documentation in R/myriad.r
 \name{theme_socviz_map}
 \alias{theme_socviz_map}
+\alias{theme_socviz_kjh_map}
 \title{theme_socviz_map}
 \usage{
 theme_socviz_map()
+
+theme_socviz_kjh_map()
 }
 \description{
 Socviz map theme
+}
+\details{
+You should [import_socviz_condensed]() and [import_socviz_semi]() first and
+also install the fonts on your system before trying to use this theme.
 }
 \examples{
 \dontrun{
