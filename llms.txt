@@ -130,7 +130,7 @@ p <- ggplot(mtcars,
 p
 ```
 
-![](reference/figures/README-unnamed-chunk-4-1.png)
+![](reference/figures/README-unnamed-chunk-3-1.png)
 
 # Check PDF works
 
@@ -156,7 +156,7 @@ out <- mtcars |>
 out
 ```
 
-![](reference/figures/README-unnamed-chunk-6-1.png)
+![](reference/figures/README-unnamed-chunk-5-1.png)
 
 ## Check PDF works
 
