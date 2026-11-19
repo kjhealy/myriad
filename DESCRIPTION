@@ -10,9 +10,11 @@ Imports:
     ggplot2 (>= 4.0.0),
     purrr,
     systemfonts,
-    sysfonts
+    sysfonts,
+    cli
 Suggests:
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 Config/testthat/edition: 3
 License: MIT License
 Encoding: UTF-8

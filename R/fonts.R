@@ -29,44 +29,56 @@ import_myriad <- function(font_family = "Myriad Pro", silent = TRUE) {
 
 #' Import Myriad SemiCondensed only
 #'
+#' Registers the SemiCondensed faces of Myriad Pro under their own family
+#' names. Each face is taken from the package's `fonts/myriad-pro` directory
+#' if present there, and otherwise from the fonts installed on the system.
 #' This will work for devices that use `systemfonts` to process fonts.
 #' For PDFs, use showtext::showtext_auto() beforehand
 #'
-#' @return Makes "Myriad SemiCondensed" available for use
+#' @return Makes "Myriad Pro SemiCondensed" and "Myriad Pro Semibold
+#'   SemiCondensed" available for use
 #' @export
 #'
 #' @examples
 #' \dontrun{
 #' }
 import_myriad_semi <- function() {
-  myriad_font_dir <- system.file("fonts", "myriad-pro", package = "myriad")
-
-  systemfonts::register_font(
-    name = "Myriad Pro SemiCondensed",
-    plain = paste0(myriad_font_dir, "/", "MyriadPro-SemiCn.otf"),
-    bold = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldSemiCn.otf"),
-    italic = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldSemiCnIt.otf"),
-    bolditalic = paste0(myriad_font_dir, "/", "MyriadPro-SemiboldCondIt.otf")
+  register_myriad_family(
+    "Myriad Pro SemiCondensed",
+    plain = "MyriadPro-SemiCn",
+    bold = "MyriadPro-SemiboldSemiCn",
+    italic = "MyriadPro-SemiCnIt",
+    bolditalic = "MyriadPro-SemiboldSemiCnIt"
+  )
+  register_myriad_family(
+    "Myriad Pro Semibold SemiCondensed",
+    plain = "MyriadPro-SemiboldSemiCn",
+    bold = "MyriadPro-SemiboldSemiCn",
+    italic = "MyriadPro-SemiboldSemiCnIt",
+    bolditalic = "MyriadPro-SemiboldSemiCnIt"
   )
 }
 
 
 #' Import Myriad Condensed only
 #'
-#' @return Makes "Myriad Condensed" available for use
+#' Registers the Condensed faces of Myriad Pro under their own family name.
+#' Each face is taken from the package's `fonts/myriad-pro` directory if
+#' present there, and otherwise from the fonts installed on the system.
+#'
+#' @return Makes "Myriad Pro Condensed" available for use
 #' @export
 #'
 #' @examples
 #' \dontrun{
 #' }
 import_myriad_condensed <- function() {
-  myriad_font_dir <- system.file("fonts", "myriad-pro", package = "myriad")
-  systemfonts::register_font(
-    name = "Myriad Pro Condensed",
-    plain = paste0(myriad_font_dir, "/", "MyriadPro-Cond.otf"),
-    bold = paste0(myriad_font_dir, "/", "MyriadPro-BoldCond.otf"),
-    italic = paste0(myriad_font_dir, "/", "MyriadPro-CondIt.otf"),
-    bolditalic = paste0(myriad_font_dir, "/", "MyriadPro-BoldCondIt.otf")
+  register_myriad_family(
+    "Myriad Pro Condensed",
+    plain = "MyriadPro-Cond",
+    bold = "MyriadPro-BoldCond",
+    italic = "MyriadPro-CondIt",
+    bolditalic = "MyriadPro-BoldCondIt"
   )
 }
 
@@ -142,4 +154,68 @@ copy_myriad_fonts <- function() {
     to = myriad_font_dir,
     overwrite = TRUE
   )
+}
+
+
+# Fonts added with systemfonts::register_font() live in the registry, which
+# systemfonts::require_font() does not consult.
+check_font <- function(family, fallback = "Helvetica Neue") {
+  registered <- tolower(systemfonts::registry_fonts()$family)
+  if (tolower(family) %in% registered) {
+    return(invisible(TRUE))
+  }
+  systemfonts::require_font(family, fallback = fallback)
+}
+
+
+# Faces are given as PostScript names, which match the Adobe file names.
+register_myriad_family <- function(name, plain, bold, italic, bolditalic) {
+  faces <- c(
+    plain = plain,
+    bold = bold,
+    italic = italic,
+    bolditalic = bolditalic
+  )
+  paths <- purrr::map_chr(faces, find_font_file)
+
+  if (is.na(paths[["plain"]])) {
+    cli::cli_abort(c(
+      "Can't find the font file for {.val {plain}}.",
+      "i" = "Install Myriad Pro on the system, or copy it into the package with {.fn copy_myriad_fonts}."
+    ))
+  }
+  paths[is.na(paths)] <- paths[["plain"]]
+
+  # systemfonts serves devices such as ragg; sysfonts serves showtext.
+  systemfonts::register_font(
+    name = name,
+    plain = paths[["plain"]],
+    bold = paths[["bold"]],
+    italic = paths[["italic"]],
+    bolditalic = paths[["bolditalic"]]
+  )
+  sysfonts::font_add(
+    name,
+    regular = paths[["plain"]],
+    bold = paths[["bold"]],
+    italic = paths[["italic"]],
+    bolditalic = paths[["bolditalic"]]
+  )
+}
+
+find_font_file <- function(
+  ps_name,
+  font_dir = system.file("fonts", "myriad-pro", package = "myriad")
+) {
+  local_path <- file.path(font_dir, paste0(ps_name, ".otf"))
+  if (nzchar(font_dir) && file.exists(local_path)) {
+    return(local_path)
+  }
+
+  installed <- systemfonts::system_fonts()
+  paths <- installed$path[installed$name == ps_name]
+  if (length(paths) == 0) {
+    return(NA_character_)
+  }
+  paths[[1]]
 }

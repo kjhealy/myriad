@@ -22,8 +22,8 @@ theme_myriad_semi <- function(
   paper = "white",
   accent = "#0072B2"
 ) {
-  systemfonts::require_font(base_family, fallback = "Helvetica Neue")
-  systemfonts::require_font(header_family, fallback = "Helvetica Neue")
+  check_font(base_family)
+  check_font(header_family)
 
   half_line <- base_size / 2
   quarter_line <- base_size / 4
@@ -325,8 +325,8 @@ theme_socviz_semi <- function(
   paper = "white",
   accent = "#0072B2"
 ) {
-  systemfonts::require_font(base_family, fallback = "Helvetica Neue")
-  systemfonts::require_font(header_family, fallback = "Helvetica Neue")
+  check_font(base_family)
+  check_font(header_family)
 
   half_line <- base_size / 2
   quarter_line <- base_size / 4

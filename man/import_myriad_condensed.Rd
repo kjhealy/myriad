@@ -7,10 +7,12 @@
 import_myriad_condensed()
 }
 \value{
-Makes "Myriad Condensed" available for use
+Makes "Myriad Pro Condensed" available for use
 }
 \description{
-Import Myriad Condensed only
+Registers the Condensed faces of Myriad Pro under their own family name.
+Each face is taken from the package's `fonts/myriad-pro` directory if
+present there, and otherwise from the fonts installed on the system.
 }
 \examples{
 \dontrun{
