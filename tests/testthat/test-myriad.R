@@ -94,3 +94,19 @@ test_that("theme_socviz_kjh aliases match the themes they alias", {
   expect_identical(theme_socviz_kjh_nymap, theme_socviz_nymap)
   expect_equal(theme_socviz_kjh(base_size = 10)$text$size, 10)
 })
+
+test_that("themes require the requested base and header families", {
+  required <- character()
+  local_mocked_bindings(
+    require_font = function(family, ...) {
+      required <<- c(required, family)
+      invisible(TRUE)
+    },
+    .package = "systemfonts"
+  )
+
+  theme_myriad_semi(base_family = "Base A", header_family = "Header A")
+  theme_socviz_semi(base_family = "Base B", header_family = "Header B")
+
+  expect_equal(required, c("Base A", "Header A", "Base B", "Header B"))
+})
