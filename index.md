@@ -17,12 +17,75 @@ All based on or derived from the Myriad Pro SemiCondensed face, with
 Myriad Pro Condensed or its Socviz version also available for labels
 inside the plot area.
 
-Note that this repo does not include the Myriad font files (the `.otf`
-files), which are owned by Adobe. You may already have them installed on
-your computer, or they may have come bundled with your copy of Acrobat
-Reader or other Adobe software.
+## Fonts
+
+This repo does not include the Myriad Pro font files (the `.otf` files).
+Adobe owns these fonts. You must get them separately. They may already
+be installed on your computer. Acrobat Reader and other Adobe software
+sometimes install them.
+
+### Myriad Pro
+
+When R loads myriad, the package registers these font families:
+
+| Family | Faces |
+|----|----|
+| `"Myriad Pro SemiCondensed"` | SemiCondensed, with Semibold SemiCondensed as the bold face |
+| `"Myriad Pro Semibold SemiCondensed"` | Semibold SemiCondensed |
+| `"Myriad Pro Condensed"` | Condensed, Bold Condensed, and their italics |
+
+The package looks for each font file in two places, in this order:
+
+1.  The `fonts/myriad-pro` folder of the installed package. On macOS,
+    [`copy_myriad_fonts()`](https://kjhealy.github.io/myriad/reference/copy_myriad_fonts.md)
+    copies the files into this folder.
+2.  The fonts installed on your computer.
+
+The package finds each file by its PostScript name, for example
+`MyriadPro-SemiCn`. The Adobe file names are the same as the PostScript
+names. The package does not find font files that have different names.
+
+The package registers each family with systemfonts and with sysfonts.
+Thus the families work with devices that use systemfonts, for example
+ragg. They also work when showtext is active.
+
+You do not need to call
+[`import_myriad_semi()`](https://kjhealy.github.io/myriad/reference/import_myriad_semi.md)
+or
+[`import_myriad_condensed()`](https://kjhealy.github.io/myriad/reference/import_myriad_condensed.md).
+These functions do the same registration as the package load. Call them
+if you install the fonts while an R session is running.
+
+If the package cannot find Myriad Pro, R loads the package without an
+error. In this case,
+[`theme_myriad_semi()`](https://kjhealy.github.io/myriad/reference/theme_myriad_semi.md)
+calls
+[`systemfonts::require_font()`](https://systemfonts.r-lib.org/reference/require_font.html)
+for each missing family. This function searches online font
+repositories. If the search does not find the family, the theme uses
+Helvetica Neue.
+
+### Socviz fonts
+
+The `theme_socviz_*()` themes use the families `"Socviz SemiCondensed"`
+and `"Socviz Condensed"`. The package does not register these families
+when R loads it. To use them with showtext, call
+[`import_socviz_semi()`](https://kjhealy.github.io/myriad/reference/import_socviz_semi.md)
+and
+[`import_socviz_condensed()`](https://kjhealy.github.io/myriad/reference/import_socviz_condensed.md).
+The Usage section shows an example.
 
 ## Usage
+
+To use the Myriad Pro theme, load the package and set the theme:
+
+``` r
+
+library(myriad)
+theme_set(theme_myriad_semi())
+```
+
+The examples below use the Socviz fonts.
 
 When creating PDFs, use with `showtext`. (To get embedded fonts with
 proper kerning in a PDF you will need to use Cairo and sacrifice several
@@ -67,7 +130,7 @@ p <- ggplot(mtcars,
 p
 ```
 
-![](reference/figures/README-unnamed-chunk-3-1.png)
+![](reference/figures/README-unnamed-chunk-4-1.png)
 
 # Check PDF works
 
@@ -93,7 +156,7 @@ out <- mtcars |>
 out
 ```
 
-![](reference/figures/README-unnamed-chunk-5-1.png)
+![](reference/figures/README-unnamed-chunk-6-1.png)
 
 ## Check PDF works
 
