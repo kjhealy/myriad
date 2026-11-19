@@ -64,7 +64,7 @@ The `theme_socviz_*()` themes use the families `"Socviz SemiCondensed"` and `"So
 
 To use the Myriad Pro theme, load the package and set the theme:
 
-```{r, eval=FALSE}
+```{r myriad-usage, eval=FALSE}
 library(myriad)
 theme_set(theme_myriad_semi())
 ```

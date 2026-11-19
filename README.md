@@ -117,7 +117,7 @@ p <- ggplot(mtcars,
 p
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" alt="" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" alt="" width="100%" />
 
 # Check PDF works
 
@@ -141,7 +141,7 @@ out <- mtcars |>
 out
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" alt="" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" alt="" width="100%" />
 
 ## Check PDF works
 
