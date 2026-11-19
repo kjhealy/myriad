@@ -2,6 +2,12 @@
 
 ## myriad 0.10.0
 
+- [`theme_myriad_semi()`](https://kjhealy.github.io/myriad/reference/theme_myriad_semi.md)
+  and
+  [`theme_socviz_semi()`](https://kjhealy.github.io/myriad/reference/theme_socviz_semi.md)
+  now check for the fonts named in `base_family` and `header_family`,
+  rather than for their default fonts.
+
 - [`theme_myriad_semi()`](https://kjhealy.github.io/myriad/reference/theme_myriad_semi.md),
   [`theme_myriad_map()`](https://kjhealy.github.io/myriad/reference/theme_myriad_map.md),
   and
